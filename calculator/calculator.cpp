@@ -1,95 +1,108 @@
 #include <iostream>
-#include <limits.h>
 #include <stdlib.h>
+#include <limits.h>
+
 using namespace std;
 
-unsigned int UINT_Addition(unsigned int a, unsigned int b)
+void unsignedType()
 {
-    try
-    {
-        if (UINT_MAX - a < b)
-        {
-            throw UINT_MAX;
-        }
-    }
-    catch (unsigned int e)
-    {
-        cout << "the addition is out of range: " << e <<endl;
-    }
-    return a + b;
-}
-
-unsigned int UINT_Substraction(unsigned int a, unsigned int b)
-{
-    try
-    {
-        if (a < b)
-        {
-            throw a;
-        }
-    }
-    catch (unsigned int e)
-    {
-        cout <<"2nd number should be lower than: "<<e<<endl;
-    }
-    return a - b;
-}
-
-// void Operations() {
-//     char operation;
-//     int x, y;
-//     cout<<"please enter your two values"<<endl;
-//     cin>>x>>y;
-//     cout<<"Please select your operation"<<endl;
-//     cin>>operation;
-
-//     switch (operation)
-//     {
-//     case '+':
-//         cout<<"Sum of two numbers is"<<UINT_Addition(x, y);
-//         break;
-//     // case '-':
-//     //     cout<<"differance of two numbers is"<<UINT_Substraction(x, y);
-//     //     break;
-//     // case '*':
-//     //     cout<<"multiplication of two numbers is"<<UINT_Multiply(x, y);
-//     //     break;
-//     // case '/':
-//     //     cout<<"division of two numbers is"<<UINT_Divide(x, y);
-//     //     break;
-//     default:
-//         cout<<"invalid operation selected";
-//         break;
-//     }
-// }
-
-int main()
-{
-    // Operations();
+    unsigned int a, b, result;
     char operation;
-    unsigned int x, y;
-    cout << "please enter possitive values" << endl;
-    cin >> x >> y;
-    cout << "Please select your operation" << endl;
-    cin >> operation;
-
-    switch (operation)
+    cout << UINT_MAX << endl;
+    cin >> a >> operation >> b;
+    try
     {
-    case '+':
-        cout << UINT_Addition(x, y);
-        break;
-    case '-':
-        cout<<UINT_Substraction(x, y);
-        break;
-    // case '*':
-    //     cout<<UINT_Multiply(x, y);
-    //     break;
-    // case '/':
-    //     cout<<UINT_Divide(x, y);
-    //     break;
-    default:
-        cout << "invalid operation selected";
-        break;
+        switch (operation)
+        {
+        case '+':
+            if (UINT_MAX - a < b)
+                throw invalid_argument("Overflow!");
+            result = a + b;
+            break;
+        case '-':
+            if (a < b)
+                throw invalid_argument("Underflow!");
+            result = a - b;
+            break;
+        case '*':
+            if (UINT_MAX / a < b)
+                throw invalid_argument("Overflow!");
+            result = a * b;
+            break;
+        case '/':
+            if (b == 0)
+                throw invalid_argument("Undefined!");
+            result = a / b;
+            break;
+        default:
+            throw invalid_argument("invalid operation selected");
+            break;
+        }
+        cout << a << " " << operation << " " << b << " = " << result << endl;
     }
+    catch (invalid_argument &err)
+    {
+        cerr << "Unable to process with the operation. Found the following error: " << err.what() << endl;
+    }
+}
+
+void signedType() {
+    int a, b, result;
+    char operation;
+    cout << INT_MAX << endl;
+    cin >> a >> operation >> b;
+    try
+    {
+        switch (operation)
+        {
+        case '+':
+            if (INT_MAX - a < b)
+                throw invalid_argument("Overflow!");
+            result = a + b;
+            break;
+        case '-':
+            if (a < b)
+                throw invalid_argument("Underflow!");
+            result = a - b;
+            break;
+        case '*':
+            if (INT_MAX / a < b)
+                throw invalid_argument("Overflow!");
+            result = a * b;
+            break;
+        case '/':
+            if (b == 0)
+                throw invalid_argument("Undefined!");
+            result = a / b;
+            break;
+        default:
+            throw invalid_argument("invalid operation selected");
+            break;
+        }
+        cout << a << " " << operation << " " << b << " = " << result << endl;
+    }
+    catch (invalid_argument &err)
+    {
+        cerr << "Unable to process with the operation. Found the following error: " << err.what() << endl;
+    }
+}
+int main()
+{   
+    char calcType;
+    cout<<"please select the calculator type from below:"<<endl<<"1 = Unsigned\n2 = Signed\n3 = Floating point"<<endl;
+    cin>>calcType;
+    switch (calcType)
+    {
+    case '1':
+        unsignedType();
+        break;
+    case '2':
+        signedType();
+        break;
+    // case '3':
+    //     break;
+    // default:
+    //     break;
+    }    
     return EXIT_SUCCESS;
 }
