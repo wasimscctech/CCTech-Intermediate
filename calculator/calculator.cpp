@@ -1,6 +1,8 @@
 #include <iostream>
 #include <stdlib.h>
 #include <limits.h>
+#include <float.h>
+#include <iomanip>
 
 using namespace std;
 
@@ -97,34 +99,28 @@ void signedType()
 
 void floatingPointType()
 {
-    int a, b, result;
+    float a, b, result;
     char operation;
-    cout << INT_MAX << endl;
-    cout << INT_MIN << endl;
+    cout << FLT_MAX << endl;
+    cout << FLT_MIN << endl;
     cin >> a >> operation >> b;
     try
     {
         switch (operation)
         {
         case '+':
-            if (INT_MAX - b < a && b > 0)
+            if (FLT_MAX - a < b)
                 throw invalid_argument("Overflow!");
-            else if (INT_MIN - b > a && b < 0)
-                throw invalid_argument("Underflow!");
             result = a + b;
             break;
         case '-':
-            if (INT_MIN + b > a && b > 0)
+            if (a < b)
                 throw invalid_argument("Underflow!");
-            else if (INT_MAX + b < a && b < 0)
-                throw invalid_argument("Overflow!");
             result = a - b;
             break;
         case '*':
-            if (INT_MAX / a < b && a > 0 || (INT_MAX / a > b && (a < 0 && b < 0)))
+            if (FLT_MAX / a < b)
                 throw invalid_argument("Overflow!");
-            else if ((INT_MIN / a > b && b < 0) || (INT_MIN / a < b && a < 0))
-                throw invalid_argument("underflow!");
             result = a * b;
             break;
         case '/':
@@ -136,11 +132,11 @@ void floatingPointType()
             throw invalid_argument("invalid operation selected");
             break;
         }
-        cout << a << " " << operation << " " << b << " = " << result << endl;
+        cout << setprecision(40) << a << " " << operation << " " << b << " = " << result << endl;
     }
     catch (invalid_argument &err)
     {
-        cerr << "Unable to process with the operation. The result is: " << err.what() << endl;
+        cerr << "Unable to process with the operation. Found the following error: " << err.what() << endl;
     }
 }
 
