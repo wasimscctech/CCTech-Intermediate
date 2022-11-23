@@ -1,7 +1,8 @@
 #include <cassert>
 #include "leapYear.h"
 
-int main() {
+int main()
+{
     assert(!isLeapYear(2001));
     assert(isLeapYear(2016));
     assert(isLeapYear(2000));
