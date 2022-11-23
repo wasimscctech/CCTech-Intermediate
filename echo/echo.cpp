@@ -1,10 +1,14 @@
 #include <iostream>
+#include <stdlib.h>
 using namespace std;
-  
-int main(int argc, char** argv)
-{ 
-    if(argc<2) cout<<endl;
-    for (int i = 0; i < argc; i++)
-        cout << argv[i] << " ";
-    return 0;
+
+int main(int argc, char *argv[])
+{
+    string output_string = "";
+    for (int i = 1; i < argc; ++i)
+    {
+        output_string = output_string + argv[i] + " ";
+    }
+    cout << output_string << endl;
+    return EXIT_SUCCESS;
 }
