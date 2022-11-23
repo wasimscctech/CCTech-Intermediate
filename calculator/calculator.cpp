@@ -10,7 +10,7 @@ void unsignedType()
 {
     unsigned int a, b, result;
     char operation;
-    cout << UINT_MAX << endl;
+    cout<<"You can now use Unsigned Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
@@ -52,8 +52,7 @@ void signedType()
 {
     int a, b, result;
     char operation;
-    cout << INT_MAX << endl;
-    cout << INT_MIN << endl;
+    cout<<"You can now use Signed Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
@@ -101,8 +100,7 @@ void floatingPointType()
 {
     float a, b, result;
     char operation;
-    cout << FLT_MAX << endl;
-    cout << FLT_MIN << endl;
+    cout<<"You can now use Floating point Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
