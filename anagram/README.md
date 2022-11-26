@@ -1,5 +1,5 @@
 Motivation: 
-we need to write a program to generate all potential anagrams of an input string.
+We need to write a program to generate all potential anagrams of an input string.
 
 Theory: 
 Anagram is a word or phrase that is made by arranging the letters of another word or phrase in a different order.
