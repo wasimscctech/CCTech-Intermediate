@@ -12,4 +12,5 @@ Roadmap:
 2. add private members for principal, interest rate and year. 
 3. create a method which will set the private members and will calculate simple interest.
 this method will takes 3 arguments and it will calculate the simple interest and return it as float point type.
+If any one of the 3 arguments is negative then the function will throw an exception.  
 4. create the main file in which we will test our code using assert function. 
