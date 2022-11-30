@@ -1,4 +1,5 @@
-Motivation: 
+Motivation:
+
 Our task is to write a function that is given a string filename
 and which returns a pair of integers specifying the start and
 end indexes (into the filename) of the selected range.
