@@ -8,7 +8,7 @@ To perform a Golden master testing on unix 'cat' command.
 
 Single argument
 
-When single argument is provided, then check if it Directory of fileName.
+When single argument is provided, then check if it is Directory or a fileName.
 
 2. If an argument is directory, then print out "DirectoryName/: Is a directory". >> cat DirectoryName
 

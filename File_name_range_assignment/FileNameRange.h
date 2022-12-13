@@ -17,11 +17,11 @@ public:
     string result;
     stringstream ss;
 
-    string removeSlashAndDots(string);
+    string getFileNameRange(string);
     void searchStr(char *);
 };
 
-string fileNameRange::removeSlashAndDots(string ipstr)
+string fileNameRange::getFileNameRange(string ipstr)
 {
     char s[ipstr.length() + 1];
     strcpy(s, ipstr.c_str());

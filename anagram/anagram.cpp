@@ -1,14 +1,20 @@
 #include <iostream>
+#include <sstream>
 #include <stdlib.h>
 #include <string>
+#include <assert.h>
 
 using namespace std;
 
-void anagram(string str, int start, int end)
+string anagram(string str, int start, int end)
 {
+    stringstream ss;
+    string result_str;
     if (start == end)
     {
-        cout << str << " ";
+        ss<< str <<" ";
+        // ss>>result_str;
+        return ss;
     }
     else
     {
@@ -27,6 +33,8 @@ int main()
     cout << "Enter a string to get the anagram: ";
     cin >> string;
     int n = string.length();
-    anagram(string, 0, n - 1);
+    // assert(anagram(string, 0, n - 1)=="biro bior brio broi bori boir ibro ibor irbo irob iorb iobr ribo riob rbio rboi robi roib oirb oibr orib orbi obri obir ");
+    // assert(anagram("abc", 0, 2)=="abc acb bac bca cba cab");
+    cout<<anagram(string, 0, n - 1);
     return EXIT_SUCCESS;
 }

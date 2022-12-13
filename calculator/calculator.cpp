@@ -10,7 +10,7 @@ void unsignedType()
 {
     unsigned int a, b, result;
     char operation;
-    cout<<"You can now use Unsigned Calculator:\n";
+    cout << "You can now use Unsigned Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
@@ -52,7 +52,7 @@ void signedType()
 {
     int a, b, result;
     char operation;
-    cout<<"You can now use Signed Calculator:\n";
+    cout << "You can now use Signed Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
@@ -100,7 +100,7 @@ void floatingPointType()
 {
     float a, b, result;
     char operation;
-    cout<<"You can now use Floating point Calculator:\n";
+    cout << "You can now use Floating point Calculator:\n";
     cin >> a >> operation >> b;
     try
     {
@@ -156,7 +156,7 @@ int main()
         floatingPointType();
         break;
     default:
-        cerr<<"invalid Calculator type, please select from the available options.";
+        cerr << "invalid Calculator type, please select from the available options.";
         break;
     }
     return EXIT_SUCCESS;
