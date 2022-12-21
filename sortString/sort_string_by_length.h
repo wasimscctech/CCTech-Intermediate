@@ -15,3 +15,5 @@ g++ -c makefile.cpp
 g++ -c sort_string_by_length.cpp
 g++ -o sort_by_length sort_by_length.o makefile.o sort_string_by_length.o
 ./sort_by_length   */
+
+// g++ -c sort_by_length.cpp makefile.cpp sort_string_by_length.cpp

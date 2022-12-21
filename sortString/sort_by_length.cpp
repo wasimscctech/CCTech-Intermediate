@@ -8,6 +8,5 @@ int main() {
     string str1, str2, str3;
     cin>>str1>>str2>>str3;
     sort_by_length(str1, str2, str3);
-    makefile();
     return EXIT_SUCCESS;
 }
