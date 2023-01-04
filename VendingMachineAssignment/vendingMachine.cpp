@@ -1,14 +1,30 @@
 #include "vendingMachine.h"
 
+void VendingMachine::vendingMachine()
+{
+    if (inventory[0] > 0 || inventory[1] > 0 || inventory[2] > 0)
+    {
+        addCoin();
+    }
+    else
+    {
+        cout << "SOLD OUT!" << endl;
+        exit(0);
+    }
+}
+
+float VendingMachine::moneyInMachine;
+
 void VendingMachine::display()
 {
-    cout << "INSERT COIN" << endl;
-    cout << "added money: $" << addedcoin << endl;
+    string display = (moneyInMachine == 0) ? "EXACT CHANGE ONLY" : "INSERT COIN";
+    cout << display << endl;
 }
 
 void VendingMachine::addCoin()
 {
     cout << "available cola: " << inventory[0] << "\navailable chips: " << inventory[1] << "\navailable candy: " << inventory[2] << endl;
+    cout << "added money: $" << addedcoin << endl;
     display();
     cin >> numberofcoins >> coin;
     if (coin == "quarter")
@@ -46,21 +62,24 @@ void VendingMachine::selectProduct()
     switch (productcode)
     {
     case 1:
-        availability();
-        isSufficientCoins(colaPrice);
+        productAvailability();
+        validateSufficientCoins(colaPrice);
         inventory[productcode - 1]--;
+        addMoneyInMachine(colaPrice);
         returnChange(colaPrice, product[0]);
         break;
     case 2:
-        availability();
-        isSufficientCoins(chipsPrice);
+        productAvailability();
+        validateSufficientCoins(chipsPrice);
         inventory[productcode - 1]--;
+        addMoneyInMachine(chipsPrice);
         returnChange(chipsPrice, product[1]);
         break;
     case 3:
-        availability();
-        isSufficientCoins(candyPrice);
+        productAvailability();
+        validateSufficientCoins(candyPrice);
         inventory[productcode - 1]--;
+        addMoneyInMachine(candyPrice);
         returnChange(candyPrice, product[2]);
         break;
     case 0:
@@ -73,13 +92,13 @@ void VendingMachine::selectProduct()
     }
 }
 
-void VendingMachine::isSufficientCoins(float productPrice)
+void VendingMachine::validateSufficientCoins(float productPrice)
 {
     if (addedcoin < productPrice)
     {
         cout << "insufficient coins! Added money: " << addedcoin << " \nProduct price: " << productPrice << " \nplease add: " << productPrice - addedcoin << " or more to proceed." << endl;
         addCoin();
-        isSufficientCoins(productPrice);
+        validateSufficientCoins(productPrice);
     }
 }
 
@@ -111,7 +130,7 @@ void VendingMachine::returnCoins()
     vendingMachine();
 }
 
-void VendingMachine::availability()
+void VendingMachine::productAvailability()
 {
     if (inventory[productcode - 1] == 0)
     {
@@ -120,15 +139,7 @@ void VendingMachine::availability()
     }
 }
 
-void VendingMachine::vendingMachine()
+void VendingMachine::addMoneyInMachine(float productSold)
 {
-    if (inventory[0] > 0 || inventory[1] > 0 || inventory[2] > 0)
-    {
-        addCoin();
-    }
-    else
-    {
-        cout << "SOLD OUT!" << endl;
-        exit(0);
-    }
+    moneyInMachine += productSold;
 }
