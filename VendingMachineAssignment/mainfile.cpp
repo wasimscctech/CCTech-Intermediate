@@ -1,4 +1,4 @@
-#include "vending.h"
+#include "vendingMachine.h"
 
 int main()
 {
