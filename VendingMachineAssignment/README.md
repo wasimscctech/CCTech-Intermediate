@@ -29,7 +29,7 @@ Select Product
 --------------
 
 There are three products: cola for $1.00, chips for $0.50, and candy for $0.65.
-`selectProduct()` function will ask customer for a code to select the product.
+`selectProduct()` function will give Customers the below options, they will use the mentioned code. 
 1. Cola
 2. Chips
 3. Candy
