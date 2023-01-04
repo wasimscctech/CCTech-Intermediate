@@ -39,7 +39,7 @@ There are three products: cola for $1.00, chips for $0.50, and candy for $0.65.
 Sufficient coins
 ----------------
 
-`validateSufficientCoins()` wil validate if the sufficient coin is provided, if the product value is greater than the added coin then it will ask for the remaing coins.
+`validateSufficientCoins()` will validate if the sufficient coin is provided, if the product value is greater than the added coin then it will ask for the remaing coins.
 Even after adding the coins for the second time is not enough the machine will ask again. 
 
 
@@ -70,7 +70,9 @@ Makefile
 --------
 
 `make clean` to delete object and executable files(i.e .o and .exe).
+
 `make compile` to compile the program. 
+
 `make run` to run the program.
 
 
