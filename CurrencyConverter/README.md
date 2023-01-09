@@ -45,7 +45,7 @@ This is "CCTech Currency Converter". The aim of this project is to convert the c
 #### To compile the program
 `make compile`
 
-#### To run the program
+#### To compile & run the program
 `make run`
 
 ### Conversion Table in the text file
