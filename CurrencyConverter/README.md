@@ -69,7 +69,7 @@ for another conversion : y, Y, n or N.
 #### handled inputs:
 for input currency : less than 1, more than 9, characters, alphabets and alphanumberic.
 for output currency : less than 1, more than 9, characters, alphabets, alphanumberic and the number user have chosen for the input currency.
-for amount: alphabets, alpha-numeric value. ~~couldn't handle the alpha-numeric values like `50a001` as the program considers this as float 50.~~
+for amount: alphabets, alpha-numeric values (e.g a5000). couldn't handle the alpha-numeric values like `50a001` as the program considers this as float 50.
 for another conversion : any other character than the expected ones.
 
 ## Makefile
