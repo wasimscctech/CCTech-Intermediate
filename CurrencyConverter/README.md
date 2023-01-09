@@ -37,6 +37,27 @@ This is "CCTech Currency Converter". The aim of this project is to convert the c
 
 `anotherConversion()` - asks for another conversion, if user doesn't want to continue it terminates the program successfully. And handle error for invalid response.
 
+## code
+
+In `readFile()` the below code is used to read the data of USD collumn and it converts the string to float and the float value then get added to the vector `toUSD`.
+```
+getline(coeff, USD, ',');
+toUSD.push_back(stof(USD));
+```
+
+#### _Note: Infinite loop occurs with cin when user passes a string while a number is expected._
+
+As per some online reference, the reason is because cin fails in the situation you describe and won't read any more input into those variables. By giving cin bad input, cin gets in the fail state and stops prompting the command line for input causing the loop to free run.
+To prevent the infinite loop we have used the below code: 
+
+```
+if (cin.fail())
+{
+    cout << "Please enter a valid number" << endl;
+    cin.clear();
+    cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+}
+```
 
 ## Makefile
 #### To delete the object and executables
