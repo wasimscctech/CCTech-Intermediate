@@ -49,6 +49,8 @@ This is "CCTech Currency Converter". The aim of this project is to convert the c
 `make run`
 
 ### Conversion Table in the text file
+_Rows represent the input currency_
+_Columns represent the output currency_
 ![This is an image](CurrencyConversionTable.jpeg)
 
 
