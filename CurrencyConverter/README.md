@@ -49,7 +49,7 @@ This is "CCTech Currency Converter". The aim of this project is to convert the c
 `make run`
 
 ### Conversion Table in the text file
-![This is an image](CurrencyConverter/CurrencyConversionTable.png)
+![This is an image](CurrencyConverter/CurrencyConversionTable.jpeg)
 
 
 
