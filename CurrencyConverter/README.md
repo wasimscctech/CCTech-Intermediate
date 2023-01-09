@@ -39,7 +39,7 @@ This is "CCTech Currency Converter". The aim of this project is to convert the c
 
 ## code
 
-In `readFile()` the below code is used to read the data of USD collumn and it converts the string to float and the float value then get added to the vector `toUSD`.
+In `readFile()` the below code is used to read the data of USD column and it converts the string to float and the float value then get added to the vector `toUSD`.
 ```
 getline(coeff, USD, ',');
 toUSD.push_back(stof(USD));
