@@ -59,6 +59,19 @@ if (cin.fail())
 }
 ```
 
+## User inputs
+#### expected inputs: 
+for input currency : any numbers between 1 to 9. 
+for output currency : any numbers between 1 to 9 except the number user have chosen for the input currency. 
+for amount: any amount (e.g 100, 200, 10.5 etc)
+for another conversion : y, Y, n or N. 
+
+#### handled inputs:
+for input currency : less than 1, more than 9, characters, alphabets and alphanumberic.
+for output currency : less than 1, more than 9, characters, alphabets, alphanumberic and the number user have chosen for the input currency.
+for amount: alphabets, alpha-numeric value. ~~couldn't handle the alpha-numeric values like `50a001` as the program considers this as float 50.~~
+for another conversion : any other character than the expected ones.
+
 ## Makefile
 #### To delete the object and executables
 `make clean`
